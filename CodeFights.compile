@@ -1,0 +1,4 @@
+<Project>
+  <!-- As more modules are created, add their .compile reference here -->
+  <Import Project=".\InterviewPractice\InterviewPractice.compile" />
+</Project>

@@ -1,0 +1,7 @@
+<Project>
+  <ItemGroup>
+    <Compile Include="InterviewPractice\WordLadder.fs" />
+    <Compile Include="InterviewPractice\TreeLevelSum.fs" />
+    <Compile Include="InterviewPractice\SimulatorHelper.fs" />
+  </ItemGroup>
+</Project>
