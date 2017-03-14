@@ -6,8 +6,9 @@ namespace CodeFightsProblem.InterviewPractice
 
     let private simulators : Map<string,(unit->unit)>=
       [
-        "treeLevelSum", TreeLevelSumSimulator.simulate;
-        "wordLadder", WordLadderSimulator.simulate
+        "wordLadder", WordLadderSimulator.simulate;
+        "tripletSum", TripletSumSimulator.simulate;
+        "treeLevelSum", TreeLevelSumSimulator.simulate
       ]
       |> Map.ofList
 
