@@ -8,7 +8,8 @@ namespace CodeFightsProblem.InterviewPractice
       [
         "wordLadder", WordLadderSimulator.simulate;
         "tripletSum", TripletSumSimulator.simulate;
-        "treeLevelSum", TreeLevelSumSimulator.simulate
+        "treeLevelSum", TreeLevelSumSimulator.simulate;
+        "streamValidation", StreamValidationSimulator.simulate;
       ]
       |> Map.ofList
 
