@@ -10,6 +10,7 @@ namespace CodeFightsProblem.InterviewPractice
         "tripletSum", TripletSumSimulator.simulate;
         "treeLevelSum", TreeLevelSumSimulator.simulate;
         "streamValidation", StreamValidationSimulator.simulate;
+        "numberOf1Bits", NumberOf1BitsSimulator.simulator
       ]
       |> Map.ofList
 

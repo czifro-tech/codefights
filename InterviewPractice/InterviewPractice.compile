@@ -1,9 +1,10 @@
 <Project>
   <ItemGroup>
-    <Compile Include="InterviewPractice\WordLadder.fs" />
-    <Compile Include="InterviewPractice\TripletSum.fs" />
-    <Compile Include="InterviewPractice\TreeLevelSum.fs" />
-    <Compile Include="InterviewPractice\StreamValidation.fs" />
-    <Compile Include="InterviewPractice\SimulatorHelper.fs" />
+    <Compile Include="InterviewPractice/NumberOf1Bits.fs" />
+    <Compile Include="InterviewPractice/WordLadder.fs" />
+    <Compile Include="InterviewPractice/TripletSum.fs" />
+    <Compile Include="InterviewPractice/TreeLevelSum.fs" />
+    <Compile Include="InterviewPractice/StreamValidation.fs" />
+    <Compile Include="InterviewPractice/SimulatorHelper.fs" />
   </ItemGroup>
 </Project>
