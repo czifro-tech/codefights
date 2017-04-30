@@ -4,50 +4,30 @@ namespace CodeFightsProblem.InterviewPractice
   // This method scored 300/300
   module internal StreamValidation =
 
-    let private shiftLeft i =
-      int <| (byte i) <<< 1
+    let private shiftLeft i = int <| (byte i) <<< 1
 
-    let private isset i x =
-      let x = x |> uint32 |> int
-      (x &&& i) <> 0
+    let private isset x = (x &&& 0b10000000) <> 0
 
-    let private mostSig = 0b10000000
+    let private validByte s = isset s && not <| isset (shiftLeft s)
+
+    let private validSeq = (Array.map validByte) >> (Array.reduce (&&))
 
     // Since UTF-8 uses the `n` most significant bits
     //  to represent the number of bytes a char is,
     //  checking and left shifting until a 0 is found
     //  suffices
-    let private getByteCount x =
-      let rec count x' b =
-        if not b then 0
-        else
-          let nx = shiftLeft x'
-          let nb = isset mostSig nx
-          1 + count nx nb
-      count x (isset mostSig x)
+    let rec private getByteCount x =
+      if not <| isset x then 0 else 1 + getByteCount (shiftLeft x)
 
-    // This is reursive to avoid mutable vars
-    let rec private processStream stream =
-      let n = Array.length stream
-      if n = 0 then true
+    // This is recursive to avoid mutable vars
+    let rec streamValidation stream =
+      if Array.isEmpty stream then true
       else
-        let byteCount = max (getByteCount stream.[0]) 1
-        if byteCount > n then false
-        elif byteCount = 1 && isset mostSig stream.[0] then false
-        elif byteCount = 1 && not <| isset mostSig stream.[0] then
-          processStream stream.[byteCount..]
-        else
-          let stream' = Array.take byteCount stream
-          printfn "%d" byteCount
-          printfn "%A" stream'
-          (stream'.[1..]
-          |> Array.mapi(fun i s ->
-            isset mostSig s && not <| isset mostSig (shiftLeft s)
-          )
-          |> Array.reduce (&&)) && processStream stream.[byteCount..]
+        let bc = max (getByteCount stream.[0]) 1
+        if bc > Array.length stream then false
+        elif bc = 1 then (not <| isset stream.[0]) && streamValidation stream.[1..]
+        else (validSeq stream.[1..bc-1]) && streamValidation stream.[bc..]
 
-    let streamValidation (stream:int[]) =
-      processStream stream
 
   module StreamValidationSimulator =
 
