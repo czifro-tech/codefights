@@ -1,14 +1,7 @@
-# codefights
-Submitted Solutions to CodeFights
+# coding-challenges
 
-These are my solutions to various codefights problems, including solutions that passed all test cases, but failed due to time constraint on hidden cases. All solutions will be in F# unless for some reason F# does not run for a certain problem, usually an issue with CodeFights' execution of F#.
+This project contains coding solutions to challenges from various sources, i.e. codefights, interview challenges, etc. Solutions are primarily written in F#. Each solution is executable with predefined input. To provide flexibility to the system, each solution is presented as a microservice and interacted with using an API gateway. This doubles as an opportunity for me to experiment with technology for supporting microservices.
 
-To run requires .NET Core 2.1.
+## Architecture
 
-Simply:
-
-- `dotnet restore`
-- `dotnet build`
-- `dotnet run`
-
-There is a very simply CLI to choose which module, i.e. interview practice, bot challenges, etc., and from those modules, choose a specific problem. Some problems may offer multiple solutions to choose from. The console output is simply the inputs used, the expected result, and the actual result for each case.
+For more on architecture, see [the architecture document](./architecture/Architecture.md).
