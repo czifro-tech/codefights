@@ -1,32 +1,48 @@
-namespace CodeFightsProblem.InterviewPractice
+namespace CodeFights.InterviewPractice
 
   // This is not part of the problems
   // This is only to help run the simulators
   module SimulatorHelper =
 
-    let private simulators : Map<string,(unit->unit)>=
+    let private simulators : (string * (unit->unit)) list =
       [
         "wordLadder", WordLadderSimulator.simulate;
         "tripletSum", TripletSumSimulator.simulate;
         "treeLevelSum", TreeLevelSumSimulator.simulate;
         "streamValidation", StreamValidationSimulator.simulate;
-        "numberOf1Bits", NumberOf1BitsSimulator.simulator
+        "numberOf1Bits", NumberOf1BitsSimulator.simulator;
+        "firstNotRepeatingCharacter", FirstNotRepeatingCharacterSimulator.simulator;
+        "rotateImage", RotateImageSimulator.simulator;
+        "firstDuplicate", FirstDuplicateSimulator.simulator;
+        "traverseTree", TraverseTreeSimulator.simulator;
+        "largestValuesInTreeRows", LargestValuesInTreeRowsSimulator.simulator;
+        "digitTreeSum", DigitTreeSumSimulator.simulator;
+        "quit", id;
       ]
-      |> Map.ofList
 
-    let chooseSimulator() =
-      let mutable validChoice = false
-      while not validChoice do
-        printfn "Please choose a simulator: "
-        simulators
-        |> Map.iter(fun k _ ->
-          printfn "%s" k
-        )
-        printf "|> "
-        let choice = System.Console.ReadLine()
-        let simOp = Map.tryFind choice simulators
-        if simOp.IsNone then
-          printfn "Please be exact!"
-        else
-          validChoice <- true
-          simOp.Value()
+    let rec chooseSimulator() =
+      printfn "Please choose a simulator: "
+      simulators
+      |> List.iteri(fun i s -> printfn "    %d. %s" (i+1) (fst s))
+      printf "|> "
+      let choice = System.Console.ReadLine()
+      let result =
+        match System.Int32.TryParse choice with
+        | true, choice ->
+          simulators
+          |> List.tryItem (choice-1)
+          |> function
+          | Some (_, sim)   -> sim(); Some()
+          | None            -> None
+        | _, _ -> None
+      result
+      |> Option.orElseWith(fun _ ->
+        match simulators |> List.tryFind (fst >> (=) choice) with
+        | Some (_, sim) -> sim(); Some()
+        | None          -> None
+      )
+      |> function
+      | Some _ -> ()
+      | _ ->
+        printfn "Invalid option: %s" choice
+        chooseSimulator();

@@ -5,6 +5,13 @@
     <Compile Include="InterviewPractice/TripletSum.fs" />
     <Compile Include="InterviewPractice/TreeLevelSum.fs" />
     <Compile Include="InterviewPractice/StreamValidation.fs" />
+    <Compile Include="InterviewPractice/FirstNotRepeatingCharacter.fs" />
+    <Compile Include="InterviewPractice/RotateImage.fs" />
+    <Compile Include="InterviewPractice/FirstDuplicate.fs" />
+    <Compile Include="InterviewPractice/TraverseTree.fs" />
+    <Compile Include="InterviewPractice/LargestValuesInTreeRows.fs" />
+    <Compile Include="InterviewPractice/DigitTreeSum.fs" />
+    <!-- Add solutions above this file -->
     <Compile Include="InterviewPractice/SimulatorHelper.fs" />
   </ItemGroup>
 </Project>
