@@ -1,4 +1,4 @@
-namespace CodeFightsProblem.InterviewPractice
+namespace CodeFights.InterviewPractice
 
   // A recursive method is used to avoid mutable vars
   // This method scored 300/300

@@ -1,4 +1,4 @@
-namespace CodeFightsProblem.InterviewPractice
+namespace CodeFights.InterviewPractice
 
   module internal TripletSum =
 

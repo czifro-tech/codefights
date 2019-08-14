@@ -1,4 +1,4 @@
-namespace CodeFightsProblem.InterviewPractice
+namespace CodeFights.InterviewPractice
 
   // Requirement: Time Complexity of O(k) where k is number of 1 bits
   //

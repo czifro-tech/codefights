@@ -1,4 +1,4 @@
-namespace CodeFightsProblem.InterviewPractice
+namespace CodeFights.InterviewPractice
 
   module internal WordLadder =
 
@@ -64,7 +64,7 @@ namespace CodeFightsProblem.InterviewPractice
           q <- List.tail q
           let _,c = g.[k]
           visit k
-          let c = 
+          let c =
             c
             |> List.filter(fun w ->
               let v,_ = g.[w]
@@ -167,7 +167,7 @@ namespace CodeFightsProblem.InterviewPractice
         "bfs", (fun beginWord endWord wordList ->
                  (WordLadder.Solution.convertToGraph wordList) |> WordLadder.Solution.bfs beginWord endWord
                  )
-        "shortestPathBetween", (fun beginWord endWord wordList -> 
+        "shortestPathBetween", (fun beginWord endWord wordList ->
                                   let d,_ = WordLadder.AlternativeSolutions.shortestPathBetween (WordLadder.AlternativeSolutions.convertToGraph wordList) beginWord endWord
                                   d
                                 )

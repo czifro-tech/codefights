@@ -1,4 +1,4 @@
-namespace CodeFightsProblem.InterviewPractice
+namespace CodeFights.InterviewPractice
 
   // This comes from a practice interview problem from codefights
   module internal TreeLevelSum =
@@ -20,7 +20,7 @@ namespace CodeFightsProblem.InterviewPractice
           level <- level - 1
         else
           if level = k then
-            // if tree.[i-1] = '(' || tree.[i-1] = ')' then 
+            // if tree.[i-1] = '(' || tree.[i-1] = ')' then
             //   sum <- sum + int(num)
             //   num <- ""
             // num <- num + (string c)
