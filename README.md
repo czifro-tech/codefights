@@ -3,7 +3,7 @@ Submitted Solutions to CodeFights
 
 These are my solutions to various codefights problems, including solutions that passed all test cases, but failed due to time constraint on hidden cases. All solutions will be in F# unless for some reason F# does not run for a certain problem, usually an issue with CodeFights' execution of F#.
 
-To run requires `dotnet core preview5+`.
+To run requires .NET Core 2.1.
 
 Simply:
 
